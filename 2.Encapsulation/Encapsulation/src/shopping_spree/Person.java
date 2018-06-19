@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
-    private static final String INVALID_NAME_EXCEPTION_MESSAGE = "Name cannot be empty.";
+    private static final String INVALID_NAME_EXCEPTION_MESSAGE = "Name cannot be empty";
     private static final String INVALID_MONEY_EXCEPTION_MESSAGE = "Money cannot be negative";
    // private static final String NOT_ENOUGTH_EXCEPTION_MESSAGE = "Money cannot be negative";
 
