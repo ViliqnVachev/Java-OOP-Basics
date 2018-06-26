@@ -20,14 +20,9 @@ public abstract class Animal {
 
     protected abstract String makeSound();
 
-    protected void eat(Food food, int quantity) {
-        if ((this.animalType.equals("Zebra") || this.animalType.equals("Mouse")) && food.getClass().getSimpleName().equals("Meat")) {
-            throw new IllegalArgumentException(String.format(INVALID_FOOD_FOR_ANIMAL, this.animalType));
-        } else if ((this.animalType.equals("Tiger")) && food.getClass().getSimpleName().equals("Vegetable")) {
-            throw new IllegalArgumentException(String.format(INVALID_FOOD_FOR_ANIMAL, this.animalType));
-        }
-        this.foodEaten += quantity;
-    }
+    protected abstract void eat(Food food, int quantity);
+
+
 
     protected String getAnimalName() {
         return animalName;

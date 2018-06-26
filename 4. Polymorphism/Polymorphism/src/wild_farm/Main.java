@@ -3,11 +3,13 @@ package wild_farm;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
+        List<Animal> animals = new ArrayList<>();
         String line = reader.readLine();
 
         while (!"End".equals(line)) {
@@ -34,21 +36,18 @@ public class Main {
                         Food meat = new Meat(quantity);
                         try {
                             cat.eat(meat, quantity);
-
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(cat);
                     } else {
                         Food vegetable = new Vegetable(quantity);
                         try {
                             cat.eat(vegetable, quantity);
-
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(cat);
                     }
+                    animals.add(cat);
                     break;
                 case "Tiger":
                     Mammal tiger = new Tiger(nameAnimal, typeAnimal, animalWeight, livingRegion);
@@ -61,7 +60,6 @@ public class Main {
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(tiger);
                     } else {
                         Food vegetable = new Vegetable(quantity);
                         try {
@@ -69,8 +67,8 @@ public class Main {
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(tiger);
                     }
+                    animals.add(tiger);
                     break;
                 case "Zebra":
                     Mammal zebra = new Zebra(nameAnimal, typeAnimal, animalWeight, livingRegion);
@@ -84,7 +82,6 @@ public class Main {
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(zebra);
                     } else {
                         Food vegetable = new Vegetable(quantity);
                         try {
@@ -93,8 +90,8 @@ public class Main {
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(zebra);
                     }
+                    animals.add(zebra);
                     break;
                 case "Mouse":
                     Mammal mouse = new Mouse(nameAnimal, typeAnimal, animalWeight, livingRegion);
@@ -107,7 +104,6 @@ public class Main {
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(mouse);
                     } else {
                         Food vegetable = new Vegetable(quantity);
                         try {
@@ -115,14 +111,14 @@ public class Main {
                         } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        System.out.println(mouse);
                     }
+                    animals.add(mouse);
                     break;
             }
 
             line = reader.readLine();
         }
+        animals.forEach(System.out::println);
     }
-
 
 }
